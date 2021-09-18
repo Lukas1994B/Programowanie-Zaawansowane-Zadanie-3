@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Lista Osób</title>
+    <style>
+        input[type='submit'], button, [aria-label] {
+            cursor: pointer;
+        }
+
+        #spoiler {
+            display: none;
+        }
+
+        table {
+            font-family: Bahnschrift, 'Times New Roman', Times, serif;
+            border: 3px solid;
+            border-collapse: collapse;
+        }
+
+        th {
+            background-color: #0066CC;
+            color: white;
+        }
+
+        td {
+            border: 10px thick;
+            padding: 3px;
+        }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <h1>Lista Osób</h1>
+        <div class="card col-5 mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Dodaj osobę</h5>
+                <form action="javascript:void(0);" method="POST" onsubmit="addItem()">
+                    <p class="card-text">
+                        <div class="col-6">
+                            <label for="add-firstname" class="form-label">Podaj imię:</label>
+                            <input type="text" class="form-control" id="add-firstname" placeholder="Imię">
+                        </div>
+                        <div class="col-6">
+                            <label for="add-firstname" class="form-label">Podaj nazwisko:</label>
+                            <input type="text" class="form-control" id="add-lastname" placeholder="Nazwisko">
+                        </div>
+                    </p>
+                    <input type="submit" class="btn btn-primary" value="Wyślij">
+                </form>
+            </div>
+        </div>
+
+        <div class="card col-5 mb-3" id="spoiler">
+            <div class="card-body">
+                <h5 class="card-title">Edytuj osobę</h5>
+                <form action="javascript:void(0);" method="POST" onsubmit="updateItem()">
+                    <input type="hidden" id="edit-id">
+                    <p class="card-text">
+                        <div class="col-6">
+                            <label for="edit-firstname" class="form-label">Imię:</label>
+                            <input type="text" class="form-control" id="edit-firstname" placeholder="Imię">
+                        </div>
+                        <div class="col-6">
+                            <label for="edit-lastname" class="form-label">Nazwisko:</label>
+                            <input type="text" class="form-control" id="edit-lastname" placeholder="Nazwisko">
+                        </div>
+                    </p>
+                    <input type="submit" class="btn btn-primary" value="Zapisz">
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+    <script src="osoba.js"></script>
+</body>
+</html>
